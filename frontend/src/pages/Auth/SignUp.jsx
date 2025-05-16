@@ -16,6 +16,7 @@ const SignUp = () => {
     // Handle sign up form submit
     const handleSignUp = async (e) => {
         e.preventDefault();
+        
     };
 
     return (
