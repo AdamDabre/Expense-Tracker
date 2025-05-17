@@ -24,6 +24,8 @@ app.use(express.json()); // Middleware to parse JSON requests
 connectDB();
 
 app.use("/api/auth", authRoutes);
+app.use("/api/income", incomeRoutes);
+app.use("/api/expense", expenseRoutes);
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
