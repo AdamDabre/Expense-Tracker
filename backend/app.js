@@ -12,11 +12,11 @@ const app = express();
 
 // Middleware to handle CORS
 app.use[
-    cors({
-        origin: process.env.CLIENT_URL || "*",
-        method: ["GET", "PUT", "DELETE", "POST"],
-        allowedHeaders: ["Content-Type", "Authorization"],
-    })
+  cors({
+    origin: process.env.CLIENT_URL || "*",
+    method: ["GET", "PUT", "DELETE", "POST"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
 ];
 
 app.use(express.json()); // Middleware to parse JSON requests
