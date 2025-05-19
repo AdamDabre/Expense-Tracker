@@ -9,18 +9,13 @@ const generateToken = (id) => {
 
 module.exports = {
   registerUser: async (req, res) => {
-    const { fullName, email, password, profileImageURL } = req.body;
+    const { fullName, email, password, profileImageUrl } = req.body;
 
     // Validation: Check if any fields are missing
-
     if (!fullName || !email || !password) {
       return res.status(400).json({ message: "All fields are required" });
     }
     try {
-      // Print all users
-      const users = await User.find();
-      console.log("All users: ", users);
-
       // Check if email already exists
       const existingUser = await User.findOne({ email });
 
@@ -34,7 +29,7 @@ module.exports = {
         fullName,
         email,
         password,
-        profileImageURL,
+        profileImageUrl,
       });
 
       res.status(201).json({

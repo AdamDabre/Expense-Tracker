@@ -41,13 +41,13 @@ const SignUp = () => {
     try {
       // Upload image
       const imgUploadResponse = await uploadImage(profilePic);
-      profileImageUrl = imgUploadResponse || "";
+      profileImageUrl = imgUploadResponse.imageUrl || "";
 
       const response = await axiosInstance.post(API_PATHS.AUTH.REGISTER, {
         fullName,
         email,
         password,
-        profilePic,
+        profileImageUrl,
       });
 
       const { token, user } = response.data;
