@@ -11,13 +11,13 @@ const incomeRoutes = require("./routes/incomeRoutes");
 const app = express();
 
 // Middleware to handle CORS
-app.use[
+app.use(
   cors({
     origin: process.env.CLIENT_URL || "*",
     method: ["GET", "PUT", "DELETE", "POST"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
-];
+);
 
 app.use(express.json()); // Middleware to parse JSON requests
 

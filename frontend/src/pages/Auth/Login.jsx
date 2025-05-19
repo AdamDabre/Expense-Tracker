@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import AuthLayout from "../../components/layouts/AuthLayout";
 import Input from "../../components/Inputs/Input";
 import { validateEmail } from "../../utils/helper";
 import { API_PATHS } from "../../utils/apiPaths";
+import { UserContext } from "../../context/userContext";
+import axiosInstance from "../../utils/axiosInstance";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { updateUser } = useContext(UserContext);
 
   // Handle login form submit
   const handleLogin = async (e) => {
@@ -38,6 +41,7 @@ const Login = () => {
 
       if (token) {
         localStorage.setItem("token", token);
+        updateUser(user);
         navigate("/dashboard");
       }
     } catch (error) {
@@ -81,7 +85,7 @@ const Login = () => {
           <p className="text-sm text-slate-800 mt-3">
             Dont have an account?{" "}
             <Link className="font-medium text-primary underline" to="/signup">
-              SignUp
+              Signup
             </Link>
           </p>
         </form>
