@@ -10,6 +10,8 @@ import { LuHand, LuHandCoins, LuWalletMinimal } from "react-icons/lu";
 import { IoMdCard } from "react-icons/io";
 import { addThousandsSeparator } from "../../utils/helper";
 import RecentTransactions from "../../components/Dashboard/RecentTransactions";
+import FinanceOverview from "../../components/Dashboard/FinanceOverview";
+import ExpenseTransactions from "../../components/Dashboard/ExpenseTransactions";
 
 const Home = () => {
     useUserAuth();
@@ -75,11 +77,25 @@ const Home = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                <RecentTransactions
+                {/* <RecentTransactions
                     transactions={dashboardData?.recentTransactions}
                     onSeeMore={() => {
                         navigate("/expense");
                     }}
+                />
+
+                <FinanceOverview
+                    totalBalance={dashboardData?.totalBalance || 0}
+                    totalIncome={dashboardData?.totalIncome || 0}
+                    totalExpense={dashboardData?.totalExpense || 0}
+                    colors={["#875CF5", "#FA2C37", "#FF6900"]}
+                /> */}
+
+                <ExpenseTransactions
+                    transactions={
+                        dashboardData?.last30DaysExpense?.transactions || []
+                    }
+                    onSeeMore={() => navigate("/expense")}
                 />
             </div>
         </DashboardLayout>
