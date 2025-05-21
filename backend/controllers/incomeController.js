@@ -33,7 +33,7 @@ module.exports = {
     const userId = req.user.id;
 
     try {
-      const income = Income.find({ userId }).sort({ date: -1 });
+      const income = await Income.find({ userId }).sort({ date: -1 });
       res.json(income);
     } catch (error) {
       console.error("Error getting all income", error);
@@ -56,7 +56,7 @@ module.exports = {
     const userId = req.user.id;
 
     try {
-      const income = Income.find({ userId }).sort({ date: -1 });
+      const income = await Income.find({ userId }).sort({ date: -1 });
 
       // Prepare data for excel
       const data = income.map((item) => ({
