@@ -9,7 +9,6 @@ import {
     AreaChart,
 } from "recharts";
 const CustomLineChart = ({ data }) => {
-    console.log("Chart Data: ", data);
     const CustomToolTip = ({ active, payload }) => {
         if (active && payload.length) {
             return (
