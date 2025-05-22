@@ -9,6 +9,7 @@ import {
     AreaChart,
 } from "recharts";
 const CustomLineChart = ({ data }) => {
+    console.log("Chart Data: ", data);
     const CustomToolTip = ({ active, payload }) => {
         if (active && payload.length) {
             return (
@@ -28,7 +29,7 @@ const CustomLineChart = ({ data }) => {
     };
     return (
         <div className="bg-white">
-            <ResponsiveContainer>
+            <ResponsiveContainer height={300} width="100%">
                 <AreaChart data={data}>
                     <defs>
                         <linearGradient
