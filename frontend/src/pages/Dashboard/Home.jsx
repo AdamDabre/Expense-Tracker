@@ -102,7 +102,7 @@ const Home = () => {
               dashboardData?.last60DaysIncome?.transactions?.slice(0, 4) || []
             }
             totalIncome={dashboardData?.totalIncome || 0}
-            colors={["#875CF5", "$FA2C37", "#FF6900", "#4f39f6"]}
+            colors={["#875CF5", "#FA2C37", "#FF6900", "#4f39f6"]}
           />
 
           <RecentIncome

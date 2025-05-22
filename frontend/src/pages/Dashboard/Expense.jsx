@@ -1,7 +1,9 @@
 import React from "react";
+import { useUserAuth } from "../../hooks/useUserAuth";
 
 const Expense = () => {
-    return <div>Expense</div>;
+  useUserAuth();
+  return <div>Expense</div>;
 };
 
 export default Expense;

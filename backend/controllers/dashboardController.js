@@ -5,7 +5,7 @@ const { Types } = require("mongoose");
 // Helper to aggregate totals
 async function getTotal(model, userObjectId) {
   const result = await model.aggregate([
-    { $match: { userID: userObjectId } },
+    { $match: { userId: userObjectId } },
     { $group: { _id: null, total: { $sum: "$amount" } } },
   ]);
   return result[0]?.total || 0;
