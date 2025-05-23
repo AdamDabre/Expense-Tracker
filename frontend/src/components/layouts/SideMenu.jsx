@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { SIDE_MENU_DATA } from "../../utils/data";
 import { UserContext } from "../../context/userContext";
 import CharAvatar from "../Cards/CharAvatar";
+import { BASE_URL } from "../../utils/apiPaths";
 
 const SideMenu = ({ activeMenu }) => {
   const { user, clearUser } = useContext(UserContext);
@@ -27,7 +28,7 @@ const SideMenu = ({ activeMenu }) => {
       <div className="flex flex-col items-center justify-center gap-3 mt-3 mb-7">
         {user?.profileImageUrl ? (
           <img
-            src={user?.profileImageUrl || ""}
+            src={`${BASE_URL}/${user?.profileImageUrl}` || ""}
             alt="Profile Image"
             className="w-20 h-20 bg-slate-400 rounded-full"
           />
