@@ -1,4 +1,7 @@
-export const BASE_URL = "http://localhost:3000";
+export const BASE_URL =
+  process.env.NODE_ENV === "production"
+    ? import.meta.env.VITE_BACKEND_URL
+    : "http://localhost:5000";
 
 // utils/apiPaths.js
 export const API_PATHS = {
