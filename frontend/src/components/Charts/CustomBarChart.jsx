@@ -6,22 +6,21 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
   Cell,
 } from "recharts";
 
 const CustomBarChart = ({ data }) => {
-  // Function to alternate colors
+  // Function to alternate colors using teal tones
   const getBarColor = (index) => {
-    return index % 2 === 0 ? "#875cf5" : "#cfbefb";
+    return index % 2 === 0 ? "#2ec4b6" : "#a7ede4";
   };
 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-white shadow-md rounded-lg p-2 border-gray-300">
-          <p className="text-xs font-semibold text-purple-800 mb-1">
+        <div className="bg-white shadow-md rounded-lg p-2 border border-gray-200">
+          <p className="text-xs font-semibold text-teal-700 mb-1">
             {payload[0].payload.category}
           </p>
           <p className="text-sm text-gray-600">
@@ -43,19 +42,17 @@ const CustomBarChart = ({ data }) => {
           <CartesianGrid stroke="none" />
           <XAxis
             dataKey="month"
-            tick={{ fontSize: 12, fill: "#555" }}
+            tick={{ fontSize: 12, fill: "#444" }}
             stroke="none"
           />
-          <YAxis tick={{ fontSize: 12, fill: "#555" }} stroke="none"></YAxis>
+          <YAxis tick={{ fontSize: 12, fill: "#444" }} stroke="none" />
 
-          <Tooltip content={CustomTooltip} />
+          <Tooltip content={<CustomTooltip />} />
 
           <Bar
             dataKey="amount"
-            fill="FF8042"
             radius={[10, 10, 0, 0]}
-            activeDot={{ r: 0, fill: "yellow" }}
-            activeStyle={{ fill: "green" }}
+            activeBar={{ fill: "#00bfa6" }}
           >
             {data.map((entry, index) => (
               <Cell key={index} fill={getBarColor(index)} />

@@ -10,6 +10,7 @@ export const useUserAuth = () => {
 
   useEffect(() => {
     if (user) return;
+    if (!localStorage.getItem("token")) return;
 
     let isMounted = true;
 
@@ -34,5 +35,5 @@ export const useUserAuth = () => {
     return () => {
       isMounted = false;
     };
-  }, [updateUser, clearUser, navigate]);
+  }, [user, updateUser, clearUser, navigate]);
 };

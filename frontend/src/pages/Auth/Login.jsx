@@ -73,7 +73,7 @@ const Login = () => {
             onChange={({ target }) => setPassword(target.value)}
             label="Password"
             placeholder="Min 8 Characters"
-            type="text"
+            type="password"
           />
 
           {error && <p className="text-red-500 text-xs pb-2.5">{error}</p>}

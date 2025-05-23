@@ -84,8 +84,8 @@ const Home = () => {
           <FinanceOverview
             totalBalance={dashboardData?.totalBalance || 0}
             totalIncome={dashboardData?.totalIncome || 0}
-            totalExpense={dashboardData?.totalExpense || 0}
-            colors={["#875CF5", "#FA2C37", "#FF6900"]}
+            totalExpense={dashboardData?.totalExpenses || 0}
+            colors={["#00bfa6", "#FA2C37", "#FF6900"]}
           />
 
           <ExpenseTransactions
@@ -102,7 +102,7 @@ const Home = () => {
               dashboardData?.last60DaysIncome?.transactions?.slice(0, 4) || []
             }
             totalIncome={dashboardData?.totalIncome || 0}
-            colors={["#875CF5", "#FA2C37", "#FF6900", "#4f39f6"]}
+            colors={["#00bfa6", "#FA2C37", "#FF6900", "#4f39f6"]}
           />
 
           <RecentIncome
