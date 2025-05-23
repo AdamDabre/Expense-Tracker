@@ -1,5 +1,7 @@
 # 💸 Income & Expense Tracker
 
+[![Live Demo](https://img.shields.io/badge/demo-live-green)](https://expense-tracker-1-gl7n.onrender.com) 
+
 A full-stack web app to **track your money like a boss** 💼  
 Built with the **MERN** stack (MongoDB, Express, React, Node.js) – secure, responsive, and pretty.  
 Perfect for anyone who wants to get serious about budgeting without the spreadsheet pain.
